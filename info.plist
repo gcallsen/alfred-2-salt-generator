@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7BF9DF19-39E9-4648-920D-79DEB1062218</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E7E568-4AAF-429B-A5F6-C458756E9AB9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EF8C226E-ECF6-4E23-9881-C9FE8E612513</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Gilman</string>
+	<key>description</key>
+	<string>Generate a 32 byte salt using Python os.urandom</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Generate Salt</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>import os
+
+# Generate 32 byte salt
+salt = os.urandom(32)
+
+
+# Send to clipboard
+if "{query}" == 'b':
+  salt = repr(salt)
+else:
+  salt = salt.encode('base-64')
+
+print '{0}'.format(salt.strip())</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>salt</string>
+				<key>subtext</key>
+				<string>Salt generated using Python os.urandom</string>
+				<key>text</key>
+				<string>Create A Salt</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EF8C226E-ECF6-4E23-9881-C9FE8E612513</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Salt created successfully and copied to clipboard</string>
+				<key>title</key>
+				<string>Salt Created</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7BF9DF19-39E9-4648-920D-79DEB1062218</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>34E7E568-4AAF-429B-A5F6-C458756E9AB9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Generate 32 Byte Salt
+Uses Python’s os.urandom().
+
+## Base-64
+
+Type `salt` to copy-to-clipboard a 32 byte salt that has been encoded to base-64
+
+## Byte String
+
+Type `salt b` to copy-to-clipboard a 32 byte salt, bytes to string.</string>
+	<key>uidata</key>
+	<dict>
+		<key>34E7E568-4AAF-429B-A5F6-C458756E9AB9</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>537D1EB2-FBE5-4B2F-BE35-161C7971D21A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7BF9DF19-39E9-4648-920D-79DEB1062218</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>EF8C226E-ECF6-4E23-9881-C9FE8E612513</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.gcallsen.com</string>
+</dict>
+</plist>
