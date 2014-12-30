@@ -1,14 +1,20 @@
 # Generate 32 Byte Salt
 Uses Python’s os.urandom().
 
-## Base-64
+## Download
+
+[Alfred 2 Salt Generator](https://github.com/gcallsen/alfred-2-salt-generator/raw/master/generate_salt.alfredworkflow)
+
+## Useage
+
+### Base-64
 
 Type `salt` to copy-to-clipboard a 32 byte salt that has been encoded to base-64. 
 For example:
 
     g7+W90M5gI06xJR8JxTwg9K3c2bFAjL1phvw4kpeeSY=
 
-## Byte String
+### Byte String
 
 Type `salt b` to copy-to-clipboard a 32 byte salt, bytes to string. For example:
 
